@@ -3,691 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Экспертный доход — Система заработка от 200.000₽ в месяц</title>
+    <title>Денежная независимость для экспертов</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            background: #0a0a0a;
-            color: #ffffff;
-            overflow-x: hidden;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #5a4a3a;
+            background: linear-gradient(135deg, #f7f3f0 0%, #f0e8e0 100%);
         }
-
+        
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Typography */
-        .display-large {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -0.02em;
-        }
-
-        .display-medium {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 600;
-            line-height: 1.1;
-            letter-spacing: -0.01em;
-        }
-
-        .body-large {
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        /* Section Spacing */
-        .section {
-            padding: 60px 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            margin-bottom: 12px;
-        }
-
-        .section-subtitle {
-            opacity: 0.7;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Cards */
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 24px;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-4px);
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), transparent),
-                       linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero h1 {
-            background: linear-gradient(135deg, #ffffff 0%, #a855f7 50%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
-        }
-
-        .hero .subtitle {
-            opacity: 0.8;
-            margin-bottom: 24px;
-        }
-
-        /* Lists */
-        .problem-list {
-            list-style: none;
-        }
-
-        .problem-list li {
-            padding: 6px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        .problem-list li::before {
-            content: "×";
-            background: #ef4444;
-            color: white;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin: 12px 0;
-        }
-
-        .benefits-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 6px 0;
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        .benefits-list li::before {
-            content: "✓";
-            background: #10b981;
-            color: white;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
             padding: 20px;
-            backdrop-filter: blur(20px);
         }
-
-        .testimonial-quote {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 12px;
-            opacity: 0.9;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .testimonial-avatar {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-name {
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .testimonial-role {
-            opacity: 0.7;
-            font-size: 0.75rem;
-        }
-
-        /* Pricing */
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 2px solid rgba(168, 85, 247, 0.3);
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #e8ddd4 0%, #d4c4b0 100%);
             border-radius: 20px;
-            padding: 28px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 196, 176, 0.3);
+        }
+        
+        .main-title {
+            font-size: 2.2rem;
+            color: #8b5a3c;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(139, 90, 60, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #a0785a;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .benefits-list {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+            color: #6d5a47;
+            font-size: 1.1rem;
+        }
+        
+        /* Section styles */
+        .section {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(139, 90, 60, 0.1);
+            border: 1px solid rgba(212, 196, 176, 0.3);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #8b5a3c;
+            margin-bottom: 25px;
             text-align: center;
             position: relative;
-            max-width: 450px;
-            margin: 0 auto;
         }
-
-        .pricing-badge {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin: 12px 0;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
-            color: white;
-            box-shadow: 0 6px 24px rgba(168, 85, 247, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(168, 85, 247, 0.4);
-        }
-
-        .btn-neon {
+        
+        .section-title::after {
+            content: '';
             display: block;
-            max-width: 300px;
-            margin: 30px auto;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 
-                0 0 20px rgba(245, 158, 11, 0.4),
-                0 6px 20px rgba(245, 158, 11, 0.3);
-            animation: pulse-neon 2s infinite;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4c4b0, #c4a484);
+            margin: 15px auto;
+            border-radius: 2px;
         }
-
-        @keyframes pulse-neon {
-            0%, 100% { 
-                box-shadow: 
-                    0 0 20px rgba(245, 158, 11, 0.4),
-                    0 6px 20px rgba(245, 158, 11, 0.3);
-            }
-            50% { 
-                box-shadow: 
-                    0 0 30px rgba(245, 158, 11, 0.6),
-                    0 10px 30px rgba(245, 158, 11, 0.5);
-            }
+        
+        /* Results section */
+        .results {
+            background: linear-gradient(135deg, #f5f0eb 0%, #ede3d9 100%);
         }
-
-        .btn-final {
-            display: block;
-            max-width: 350px;
-            margin: 30px auto;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            text-decoration: none;
+        
+        .results ul {
+            list-style: none;
+        }
+        
+        .results li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: #6d5a47;
             font-size: 1.1rem;
-            font-weight: 700;
+        }
+        
+        .results li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #a0785a;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* Program section */
+        .program-week {
+            background: rgba(248, 243, 238, 0.8);
+            padding: 25px;
+            margin-bottom: 20px;
             border-radius: 12px;
-            text-align: center;
-            box-shadow: 
-                0 0 20px rgba(16, 185, 129, 0.4),
-                0 6px 20px rgba(16, 185, 129, 0.3);
-            animation: glow-green 2s infinite alternate;
+            border-left: 5px solid #c4a484;
         }
-
-        @keyframes glow-green {
-            from { 
-                box-shadow: 
-                    0 0 20px rgba(16, 185, 129, 0.4),
-                    0 6px 20px rgba(16, 185, 129, 0.3);
-            }
-            to { 
-                box-shadow: 
-                    0 0 30px rgba(16, 185, 129, 0.6),
-                    0 10px 30px rgba(16, 185, 129, 0.5);
-            }
-        }
-
-        /* Special Sections */
-        .urgency-section {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .urgency-section h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .about-section {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .about-avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+        
+        .week-title {
+            font-size: 1.3rem;
+            color: #8b5a3c;
+            margin-bottom: 15px;
             font-weight: bold;
         }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.6;
+        
+        .problem {
+            color: #9d6b47;
+            font-style: italic;
+            margin-bottom: 10px;
         }
-
+        
+        .solution {
+            color: #6d5a47;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .help-list {
+            list-style: none;
+            margin-left: 20px;
+        }
+        
+        .help-list li {
+            margin-bottom: 8px;
+            color: #7a6553;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .help-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #a0785a;
+            font-weight: bold;
+        }
+        
+        /* Bonuses */
+        .bonus {
+            background: rgba(240, 232, 224, 0.6);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(196, 164, 132, 0.3);
+        }
+        
+        .bonus-title {
+            color: #8b5a3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .bonus-value {
+            color: #a0785a;
+            font-style: italic;
+            font-weight: 500;
+            float: right;
+        }
+        
+        .total-bonuses {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #8b5a3c;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(212, 196, 176, 0.2);
+            border-radius: 10px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: linear-gradient(135deg, #e8ddd4 0%, #dcc6b0 100%);
+            text-align: center;
+        }
+        
+        .old-price {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: #9d6b47;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 2.5rem;
+            color: #8b5a3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .savings {
+            color: #a0785a;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .payment-options {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .payment-options li {
+            margin-bottom: 12px;
+            color: #6d5a47;
+            font-size: 1.1rem;
+        }
+        
+        /* Guarantees */
+        .guarantee {
+            background: rgba(245, 240, 235, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(196, 164, 132, 0.4);
+        }
+        
+        .guarantee-title {
+            color: #8b5a3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Urgency */
+        .urgency {
+            background: linear-gradient(135deg, #d4c4b0 0%, #c4a484 100%);
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .urgency-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .price-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .today-price, .future-price {
+            text-align: center;
+        }
+        
+        .today-price span, .future-price span {
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .scarcity {
+            font-size: 1.2rem;
+            color: #f8f3f0;
+            margin-bottom: 20px;
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #8b5a3c 0%, #a0785a 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .ps {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 0 12px;
+                padding: 10px;
+            }
+            
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
             }
             
             .section {
-                padding: 40px 0;
+                padding: 25px;
             }
             
-            .grid-2, .grid-3, .grid-4 {
-                grid-template-columns: 1fr;
+            .new-price {
+                font-size: 2rem;
             }
             
-            .card {
-                padding: 20px;
-            }
-            
-            .pricing-card {
-                padding: 24px;
+            .price-comparison {
+                flex-direction: column;
+                gap: 20px;
             }
         }
-
-        /* Smooth animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(15px);
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.2s; }
-        .fade-in:nth-child(3) { animation-delay: 0.3s; }
-        .fade-in:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <!-- Слайд 1: Титульный лист -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge">🚀Ольга Варанкина — эксперта денежной системы</div>
-                <h1 class="display-large">СИСТЕМА<br>"ЭКСПЕРТНЫЙ ДОХОД"</h1>
-                <p class="body-large subtitle">Готовая модель бизнеса для заработка от 200.000₽ в месяц на своей экспертности</p>
-                <p style="opacity: 0.8; margin-bottom: 28px;">Для экспертов и коучей, которые хотят системно зарабатывать без прогревов, команды и рекламных вложений</p>
-                <a href="https://t.me/oi_varankina" class="btn btn-primary">Узнать больше</a>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">КАК ЭКСПЕРТУ ВЫЙТИ С 30.000 НА 200.000+ РУБЛЕЙ ЗА 60 ДНЕЙ БЕЗ СЪЁМКИ РИЛСОВ, ТЕХНИЧЕСКИХ МУК И НАЙМА КОМАНДЫ</h1>
+            
+            <p class="subtitle">Получи систему "поставил и забыл", которая продаёт 24/7 и приводит клиентов сама — первые заявки уже через 5 дней!</p>
+            
+            <ul class="benefits-list">
+                <li><strong>БЕЗ камеры</strong> и страха говорить "что-то не то"</li>
+                <li><strong>БЕЗ вложений</strong> в рекламу и поиска нужных людей</li>
+                <li><strong>БЕЗ выгорания</strong> и работы на износ</li>
+            </ul>
+            
+            <div style="margin-top: 20px; font-style: italic; color: #7a6553;">
+                <p>— Даже если у тебя мёртвые соцсети и ты их редко ведёшь</p>
+                <p>— Даже если ты технический "чайник" и боишься всего нового</p>
+                <p>— Даже если подписчики спят и никак не реагируют</p>
+                <p>— Даже если ты устала от курсов без результата и готова идти в найм</p>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Слайд 2: Узнаете себя? -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-medium section-title">Узнаете себя?</h2>
-                <p class="body-large section-subtitle">Две истории. Какая ваша?</p>
-            </div>
-            
-            <div class="grid-2">
-                <div class="card fade-in">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 12px;">🔰 ИСТОРИЯ №1: "Хочу начать, но не знаю как"</h3>
-                    <ul class="problem-list">
-                        <li>У вас есть экспертиза, но нет продукта и системы продаж</li>
-                        <li>Не понимаете, как планировать бизнес и находить клиентов</li>
-                        <li>Боитесь запуститься и "опозориться"</li>
-                    </ul>
-                </div>
-                
-                <div class="card fade-in">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 12px;">📈 ИСТОРИЯ №2: "Делаю все, а денег нет"</h3>
-                    <ul class="problem-list">
-                        <li>Уже зарабатываете 100К+, но хотите 200-300К стабильно</li>
-                        <li>Тратите 10 часов на написание контента, а продаж нет</li>
-                        <li>Клиенты не покупают, хочется все бросить и уйти в найм</li>
-                        <li>Не понимаете, что делегировать и как масштабироваться</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-weight: 600;">Знакомо? Тогда эта возможность для вас.</p>
-            </div>
-        </div>
-    </section>
+        <!-- Results Section -->
+        <section class="section results">
+            <h2 class="section-title">✅ МОИ РЕЗУЛЬТАТЫ С ЭТОЙ ЖЕ СИСТЕМОЙ</h2>
+            <ul>
+                <li>Стабильно зарабатываю 300.000+ рублей без напряга и выгорания</li>
+                <li>Клиенты сами находят меня и просят о сотрудничестве</li>
+                <li>Работаю 3-4 часа в день, остальное время — семья и отдых</li>
+                <li>150+ женщин уже получили финансовую независимость от мужей</li>
+                <li>Создала продукты, которые продаются сами без моего участия</li>
+            </ul>
+        </section>
 
-    <!-- Слайд 3: Цена проблемы -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-medium section-title">Сколько стоит "так жить нельзя"?</h2>
-            </div>
+        <!-- Program Section -->
+        <section class="section">
+            <h2 class="section-title">🎯 ПРОГРАММА "ДЕНЕЖНАЯ НЕЗАВИСИМОСТЬ"</h2>
             
-            <div class="card" style="margin-bottom: 30px;">
-                <h3 style="color: #ef4444; margin-bottom: 16px; text-align: center;">💸 ФИНАНСОВЫЕ ПОТЕРИ:</h3>
-                <ul class="benefits-list">
-                    <li>Доход ниже потенциала на 200-400.000₽ ежемесячно</li>
-                    <li>За год упускаете 2.4-4.8 миллиона рублей</li>
-                    <li>Низкие чеки вместо продуктов от 100.000₽</li>
+            <div class="program-week">
+                <h3 class="week-title">НЕДЕЛЯ 1-2: ТВОЙ ПЕРВЫЙ ПРОДУКТ</h3>
+                <p class="problem"><strong>ПРОБЛЕМА:</strong> "Не знаю, какой продукт создать и как его упаковать"</p>
+                <p class="solution"><strong>РЕШЕНИЕ:</strong> За 3 часа создашь продукт, который принесёт первые 50.000 рублей</p>
+                <p style="margin-bottom: 10px; color: #8b5a3c; font-weight: 500;"><strong>МОЯ ПОМОЩЬ:</strong></p>
+                <ul class="help-list">
+                    <li>Я лично проведу аудит твоих знаний и найду золотую жилу</li>
+                    <li>Дам готовую структуру продукта в твоей нише — просто заполни пустые места</li>
+                    <li>Запишу с тобой продающую презентацию — ты только читаешь с листа</li>
                 </ul>
             </div>
+
+            <div class="program-week">
+                <h3 class="week-title">НЕДЕЛЯ 3-4: КЛИЕНТСКАЯ ВОРОНКА</h3>
+                <p class="problem"><strong>ПРОБЛЕМА:</strong> "Не понимаю, что такое воронки и как их делать"</p>
+                <p class="solution"><strong>РЕШЕНИЕ:</strong> Построим простую воронку из 3 шагов, которая работает на автопилоте</p>
+                <p style="margin-bottom: 10px; color: #8b5a3c; font-weight: 500;"><strong>МОЯ ПОМОЩЬ:</strong></p>
+                <ul class="help-list">
+                    <li>Готовые шаблоны всех писем — копируешь и меняешь под себя</li>
+                    <li>Настрою тебе техническую часть — ты только нажимаешь "запустить"</li>
+                    <li>Схема из 7 постов, которые превращают подписчиков в покупателей</li>
+                </ul>
+            </div>
+
+            <div class="program-week">
+                <h3 class="week-title">НЕДЕЛЯ 5-6: ЛЕНИВЫЙ КОНТЕНТ</h3>
+                <p class="problem"><strong>ПРОБЛЕМА:</strong> "Не хватает сил на рилсы, сторис, не знаю, о чём писать"</p>
+                <p class="solution"><strong>РЕШЕНИЕ:</strong> Контент-план на 90 дней, который не требует камеры и креатива</p>
+                <p style="margin-bottom: 10px; color: #8b5a3c; font-weight: 500;"><strong>МОЯ ПОМОЩЬ:</strong></p>
+                <ul class="help-list">
+                    <li>90 готовых постов под твою нишу — просто публикуй по расписанию</li>
+                    <li>Схемы продающих постов без камеры — только текст и чужие картинки</li>
+                    <li>План на месяц за 2 часа — больше не думаешь, что написать</li>
+                </ul>
+            </div>
+
+            <div class="program-week">
+                <h3 class="week-title">НЕДЕЛЯ 7-8: МАСШТАБИРОВАНИЕ</h3>
+                <p class="problem"><strong>ПРОБЛЕМА:</strong> "Боюсь поднимать цены и не дам результат"</p>
+                <p class="solution"><strong>РЕШЕНИЕ:</strong> Удвоишь стоимость услуг и получишь ещё больше клиентов</p>
+                <p style="margin-bottom: 10px; color: #8b5a3c; font-weight: 500;"><strong>МОЯ ПОМОЩЬ:</strong></p>
+                <ul class="help-list">
+                    <li>Готовые скрипты для работы с возражениями "дорого"</li>
+                    <li>Схема позиционирования себя как эксперта без синдрома самозванца</li>
+                    <li>Система гарантий, которая снимает все страхи клиентов</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bonuses Section -->
+        <section class="section">
+            <h2 class="section-title">🎁 ПОЛУЧИ 7 МОЩНЫХ БОНУСОВ</h2>
             
-            <div class="urgency-section">
-                <h3>😰 ЭМОЦИОНАЛЬНАЯ ЦЕНА</h3>
-                <p style="font-size: 0.9rem;">10 часов в день на контент без результата • Выгорание и мысли "вернуться в найм" • Неуверенность в ценности экспертизы • Постоянный стресс</p>
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №1 — Магия первого впечатления</div>
+                <div class="bonus-value">Ценность: 50.000 руб</div>
+                <p style="clear: both;">Готовая настройка профиля в ТГ/Инсте, которая продаёт ещё до знакомства</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №2 — Клиенты сами бегут к тебе</div>
+                <div class="bonus-value">Ценность: 80.000 руб</div>
+                <p style="clear: both;">5 способов находить клиентов в спящих соцсетях без вложений в рекламу</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №3 — Продающие тексты без камеры</div>
+                <div class="bonus-value">Ценность: 120.000 руб</div>
+                <p style="clear: both;">200+ готовых постов для любой ниши — никакой съёмки, только копируй</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №4 — Антикризисная программа</div>
+                <div class="bonus-value">Ценность: 70.000 руб</div>
+                <p style="clear: both;">Что делать, если доходы упали и клиенты исчезли — план восстановления за 14 дней</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №5 — Техническая магия</div>
+                <div class="bonus-value">Ценность: 100.000 руб</div>
+                <p style="clear: both;">Настрою все технические моменты лично — воронки, чат-боты, автоответчики</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №6 — Семейный баланс</div>
+                <div class="bonus-value">Ценность: 60.000 руб</div>
+                <p style="clear: both;">Как совмещать бизнес, семью и детей без надрыва — от мамы 3 детей с доходом 300к</p>
+            </div>
+
+            <div class="bonus">
+                <div class="bonus-title">БОНУС №7 — Помощница-находка</div>
+                <div class="bonus-value">Ценность: 40.000 руб</div>
+                <p style="clear: both;">Готовые техзадания для найма идеального ассистента + где его искать</p>
+            </div>
+
+            <div class="total-bonuses">ИТОГО БОНУСОВ НА СУММУ: 520.000 РУБЛЕЙ</div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section">
+            <h2 class="section-title">💎 ТВОЙ РЕЗУЛЬТАТ ПОСЛЕ ПРОГРАММЫ</h2>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Стабильный доход 150.000-300.000 рублей без надрыва и выгорания
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Первые продажи и новые клиенты через 5-7 дней работы
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Система, которая работает, пока ты спишь или отдыхаешь с семьёй
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Полная финансовая независимость от мужа — покупаешь что хочешь
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Уверенность в себе и своей экспертности — никаких сомнений
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative; color: #6d5a47;">
+                    <span style="position: absolute; left: 0; color: #a0785a; font-weight: bold;">✓</span>
+                    Время для себя, семьи и хобби — работа не поглощает всю жизнь
+                </li>
+            </ul>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section pricing">
+            <h2 class="section-title">💰 СТОИМОСТЬ УЧАСТИЯ</h2>
+            
+            <p class="old-price">Индивидуальная работа обычно стоит: 280.000 рублей</p>
+            
+            <div style="margin: 30px 0; padding: 25px; background: rgba(139, 90, 60, 0.1); border-radius: 15px;">
+                <h3 style="color: #8b5a3c; margin-bottom: 20px; font-size: 1.4rem;">🔥 ТОЛЬКО 3 ДНЯ И ТОЛЬКО ДЛЯ 6 САМЫХ РЕШИТЕЛЬНЫХ:</h3>
+                <p class="new-price">120.000 рублей</p>
+                <p class="savings">ЭКОНОМИЯ 160.000 рублей!</p>
             </div>
             
-            <div style="text-align: center;">
-                <div class="card" style="max-width: 500px; margin: 0 auto;">
-                    <h3 style="color: #a855f7; margin-bottom: 12px;">⏰ ВРЕМЯ ЖИЗНИ:</h3>
-                    <p style="font-size: 0.9rem;">Годы топтания на месте без системы • Бесконечные эксперименты вместо работающей модели</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h4 style="color: #8b5a3c; margin-bottom: 20px;">Ещё выгоднее для сомневающихся:</h4>
+            <ul class="payment-options">
+                <li>💫 <strong>Первый месяц БЕСПЛАТНО</strong> — со второго месяца 15.000 х 8 месяцев</li>
+                <li>💫 <strong>Рассрочка 0%:</strong> 40.000 х 3 месяца</li>
+                <li>💫 <strong>Антикризисная:</strong> 50% сейчас + 50% после первых 100.000 дохода</li>
+            </ul>
+        </section>
 
-    <!-- Слайд 4: Решение существует -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-medium section-title">СИСТЕМА "ЭКСПЕРТНЫЙ ДОХОД"</h2>
-                <p class="body-large section-subtitle">Готовая модель бизнеса для стабильного заработка 200-500.000₽ в месяц</p>
+        <!-- Guarantees Section -->
+        <section class="section">
+            <h2 class="section-title">🛡️ ТРОЙНАЯ ГАРАНТИЯ РЕЗУЛЬТАТА</h2>
+            
+            <div class="guarantee">
+                <div class="guarantee-title">ГАРАНТИЯ №1:</div>
+                <p>Если за 60 дней не вернёшь вложения и не заработаешь минимум 120.000 рублей — работаю с тобой БЕСПЛАТНО до первого результата</p>
+            </div>
+
+            <div class="guarantee">
+                <div class="guarantee-title">ГАРАНТИЯ №2:</div>
+                <p>Не понравится программа в первые 14 дней — верну 100% без вопросов и претензий</p>
+            </div>
+
+            <div class="guarantee">
+                <div class="guarantee-title">ГАРАНТИЯ №3:</div>
+                <p>Если будешь делать всё по плану, но за 90 дней не выйдешь на доход 150.000+ — верну тебе ДВОЙНУЮ стоимость программы</p>
+            </div>
+        </section>
+
+        <!-- Urgency Section -->
+        <section class="section urgency">
+            <h2 class="urgency-title">⚡ ВНИМАНИЕ! АКЦИЯ СГОРАЕТ</h2>
+            
+            <div class="price-comparison">
+                <div class="today-price">
+                    <span>❤️ СЕГОДНЯ:</span>
+                    <p>120.000 руб + все бонусы на 520.000</p>
+                </div>
+                <div class="future-price">
+                    <span>💔 ЧЕРЕЗ 72 ЧАСА:</span>
+                    <p>280.000 руб + бонусы сгорают навсегда</p>
+                </div>
             </div>
             
-            <div class="grid-2">
-                <div class="card fade-in">
-                    <h3 style="color: #FFD700; margin-bottom: 16px;">🤩 БЕЗ чего работает:</h3>
-                    <ul class="advantages-list">
-                        <li>Без прогревов в сторис</li>
-                        <li>Без команды на старте</li>
-                        <li>Без вложений в рекламу</li>
-                        <li>Без 10-часового контент-плана</li>
-                        <li>Без выгорания и нестабильности</li>
-                    </ul>
-                </div>
-                
-                <div class="card fade-in">
-                    <h3 style="color: #10b981; margin-bottom: 16px;">✅ ЧТО получаете:</h3>
-                    <ul class="benefits-list">
-                        <li>Полную готовую модель бизнеса</li>
-                        <li>Технологию продаж на автомате</li>
-                        <li>Опору и веру в себя</li>
-                        <li>Системный подход к масштабированию</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p class="scarcity">⚠️ ВСЕГО 6 МЕСТ — 2 УЖЕ ЗАНЯТЫ!</p>
+            <p>После заполнения мест набор закрывается на полгода</p>
+        </section>
 
-    <!-- Слайд 5: Как работает система -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-medium section-title">8 шагов от хаоса к системе</h2>
+        <!-- CTA Section -->
+        <section class="section cta">
+            <h2 class="cta-title">🚀 ГОТОВА НАКОНЕЦ СТАТЬ ФИНАНСОВО НЕЗАВИСИМОЙ?</h2>
+            
+            <div class="contact-info">
+                <p><strong>Пиши мне лично @oi_varankina прямо сейчас</strong></p>
+                <p><strong>В сообщении напиши "ХОЧУ НЕЗАВИСИМОСТЬ" — расскажу всё в деталях!</strong></p>
             </div>
             
-            <div style="display: grid; gap: 16px;">
-                <div class="card" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3);">
-                    <h3 style="color: #a855f7; margin-bottom: 12px; text-align: center; font-size: 1rem;">ФУНДАМЕНТ (Недели 1-2)</h3>
-                    <div class="grid-2">
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 1: Распаковка уникальности</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">За 1 день поймете, как монетизировать на 200-500.000₽</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 2: 7 неочевидных связок</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">Для быстрого поиска клиентов за 10 дней</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
-                    <h3 style="color: #3b82f6; margin-bottom: 12px; text-align: center; font-size: 1rem;">ПРОДУКТ (Недели 3-4)</h3>
-                    <div class="grid-2">
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 3: Упаковка продукта</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">С чеком от 100.000₽, который разлетается на "1-2-3"</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 4: Секретные техники продаж</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">И скрипт на 2.500.000₽</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
-                    <h3 style="color: #10b981; margin-bottom: 12px; text-align: center; font-size: 1rem;">АВТОМАТИЗАЦИЯ (Недели 5-7)</h3>
-                    <div class="grid-2">
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 5: 3 воронки продаж</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">Которые приносят 200-500.000₽</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 6: Контент-стратегия</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">Как писать посты, чтобы подписчики покупали с первого прочтения</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">
-                    <h3 style="color: #f59e0b; margin-bottom: 12px; text-align: center; font-size: 1rem;">МАСШТАБИРОВАНИЕ (Недели 8-10)</h3>
-                    <div class="grid-2">
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 7: Прокачка мышления</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">Для кратного роста доходов</p>
-                        </div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Шаг 8: Найм команды</h4>
-                            <p style="opacity: 0.8; font-size: 0.8rem;">И выход на 500.000₽+</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Button "Занять место🤩" -->
-    <div class="container">
-        <a href="https://t.me/oi_varankina" class="btn-neon">Занять место🤩</a>
+            <p class="ps">P.S. Пока ты думаешь — другие женщины уже зарабатывают и покупают себе то, что хотят. Не упусти свой шанс!</p>
+        </section>
     </div>
-
-    <!-- Слайд 6: Ваши конкретные результаты -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-medium section-title">Что получите через 10 недель</h2>
-            </div>
-            
-            <div class="grid-4">
-                <div class="card fade-in">
-                    <h3 style="color: #a855f7; margin-bottom: 12px; font-size: 0.9rem;">💰 ФИНАНСОВЫЕ</h3>
-                    <ul class="benefits-list">
-                        <li>Стабильный доход 200-500.000₽ в месяц</li>
-                        <li>Ежегодный доход от 1 до 3 млн₽ минимум</li>
-                        <li>Продукты с чеком от 100.000₽</li>
-                        <li>Продажи на автомате без надрыва</li>
-                    </ul>
-                </div>
-                
-                <div class="card fade-in">
-                    <h3 style="color: #3b82f6; margin-bottom: 12px; font-size: 0.9rem;">⏰ ВРЕМЕННЫЕ</h3>
-                    <ul class="benefits-list">
-                        <li>Работа 4 часа в день вместо 10-12</li>
-                        <li>Конец бесконечному написанию контента</li>
-                        <li>Свобода от ручных продаж</li>
-                    </ul>
-                </div>
-                
-                <div class="card fade-in">
-                    <h3 style="color: #10b981; margin-bottom: 12px; font-size: 0.9rem;">⚙️ СИСТЕМНЫЕ</h3>
-                    <ul class="benefits-list">
-                        <li>3 настроенные воронки продаж</li>
-                        <li>Готовая модель масштабирования бизнеса</li>
-                        <li>План найма и делегирования задач</li>
-                    </ul>
-                </div>
-                
-                <div class="card fade-in">
-                    <h3 style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">🎯 ЛИЧНОСТНЫЕ</h3>
-                    <ul class="benefits-list">
-                        <li>Опора и вера в себя</li>
-                        <li>Осознание ценности своей экспертизы</li>
-                        <li>Уверенность в финансовом будущем</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Слайд 7: Доказательства работы -->
-    <section
+</body>
+</html>
